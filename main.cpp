@@ -400,15 +400,15 @@ template <class T>
                switch (choise)
                {
                case 49:
-                   cout << "tupe - int" << endl;
+                   cout << "tupe- int" << endl;
                    main_program <int>();
                    break;
                case 50:
-                   cout << "tupe - float" << endl;
+                   cout << "tupe- float" << endl;
                    main_program <float>();
                    break;
                case 51:
-                   cout << "tupe - double" << endl;
+                   cout << "tupe- double" << endl;
                    main_program <double>();
                    break;
                    //case 52:
