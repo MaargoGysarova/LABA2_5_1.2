@@ -243,10 +243,8 @@ bool check_regular_polygon(Broken_line<T>& line) {
     // check if massive is empty
     if (index_massive == -1) {
         return true;
-    } 
-        
-        
-        return false;
+    }
+    return false;
     }
 
  
