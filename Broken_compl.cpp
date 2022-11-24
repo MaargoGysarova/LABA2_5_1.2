@@ -4,7 +4,7 @@ template<class C>
 inline Broken_compl<C>::Broken_compl(unsigned int grow_size, unsigned int size)
 {
     this->size = size;
-    points = new Complex<C>[this->size];
+    points_compl = new Complex<C>[this->size];
 }
 
 template<class C>
@@ -58,6 +58,57 @@ Broken_compl<C>& Broken_compl<C>::operator+=(const Complex<C>& src)
     counter++;
     return *this;
 }
+
+template<class C>
+Broken_compl<C>& Broken_compl<C>::operator+(const Complex<C>& src)
+{
+    Complex<C>* tmp;
+    if (counter == size) {
+        tmp = new Complex<C>[this->size + grow_size];
+        tmp[0] = src;
+        for (int i = 1; i < this->counter + 1; i++) {
+            tmp[i] = points_compl[i - 1];
+
+        }
+    }
+    else {
+        tmp = new Complex<C>[this->counter + 1];
+        tmp[0] = src;
+        for (int i = 1; i < this->counter + 1; i++) {
+            tmp[i] = points_compl[i - 1];
+        }
+    }
+    this->counter++;
+    points_compl = tmp;
+    return *this;
+}
+
+template<class C>
+double Broken_compl<C>::get_length() const
+{
+    double length = 0;
+    if (size > 1) {
+        for (int i = 0; i < counter; i++) {
+            if (i == counter - 1) { length += Complex<C>::GetDistance(points_compl[i], points_compl[0]); }
+            else { length += Complex<C>::GetDistance(points_compl[i], points_compl[i + 1]); }
+        }
+    }
+    return length;
+}
+
+template<class C>
+double Broken_compl<C>::get_length_two_tops(const Complex<C>& A, const Complex<C>& B)
+{
+    return Complex<C>::GetDistance(A, B);
+}
+
+template<class C>
+int Broken_compl<C>::get_counter() const
+{
+    return counter;
+}
+
+
 
 
 

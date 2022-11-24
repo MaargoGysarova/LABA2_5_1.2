@@ -1,4 +1,5 @@
 #include "Complex.h"
+#include <cmath>
 
 template<class C>
 Complex<C>::Complex(C re, C im): re(re), im(im)
@@ -35,7 +36,7 @@ istream& operator>>(istream& in, Complex<C>& x)
 template<class C>
 Complex<C>::operator double() const
 {
-    return (re * re - im * im);
+    return sqrt(re * re - im * im);
 }
 
 template<class C>
@@ -57,4 +58,13 @@ C Complex<C>::Get_Re()const {
 template<class C>
 C Complex<C>::Get_Im()const {
     return this->im;
+}
+
+template<class C>
+double Complex<C>::GetDistance(const Complex& A, const Complex& B)
+{
+    Complex<C> tmp;
+    tmp.re = A.re - B.re;
+    tmp.im = A.im - B.im;
+    return tmp.operator double;
 }

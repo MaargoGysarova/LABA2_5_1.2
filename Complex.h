@@ -23,5 +23,7 @@ public:
 
 	C Get_Re()const;
 	C Get_Im()const;
+
+	static double GetDistance(const Complex& A, const Complex& B);
 };
 

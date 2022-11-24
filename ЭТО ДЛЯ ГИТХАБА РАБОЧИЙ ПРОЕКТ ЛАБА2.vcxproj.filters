@@ -34,7 +34,7 @@
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
     <ClCompile Include="Broken_compl.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Файлы ресурсов</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -54,7 +54,7 @@
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
     <ClInclude Include="Broken_compl.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Файлы ресурсов</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
