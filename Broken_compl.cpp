@@ -25,7 +25,7 @@ void Broken_compl<C>::operator()(const Complex<C>& value, int index)
 }
 
 template<class C>
-Complex<C>& Broken_compl<C>::operator+(const Broken_compl<C>& second_line)
+Broken_compl<C>& Broken_compl<C>::operator+(const Broken_compl<C>& second_line)
 {
     Broken_compl<C> line;
     line.points_compl = new Complex<C>[this->size + second_line.size];
@@ -108,8 +108,17 @@ int Broken_compl<C>::get_counter() const
     return counter;
 }
 
+template<class C>
+void Broken_compl<C>::set_size(int new_size)
+{
+    this->size = new_size;
+}
 
 
+template class Complex <float>;
+template class Complex<double>;
+template class Broken_compl<float>;
+template class Broken_compl<double>;
 
 
 

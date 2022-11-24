@@ -1,11 +1,13 @@
 #include <iostream>
 #include "Broken_line.h"
 #include "Complex.h"
+#include "Broken_compl.h"
 using namespace std;
 #include <conio.h>
 #include "Graphics.h"
 #include "ESetErrors.h"
-#include <complex>
+#include "Menu_Compl.cpp"
+
 
 
 int get_key(){
@@ -18,9 +20,7 @@ int get_key(){
 template <class T>
 T check()
 {
-	
-	if (typeid(T) == typeid(int)) {
-        T number = -1;
+	T number = -1;
         while (number < 0)
         {
             while (!(cin >> number) || (cin.peek() != '\n'))
@@ -34,13 +34,7 @@ T check()
         }
 
         return number;
-    }
-    else {
-		T number;
-        cin >> number;
-		return number;
     
-    }
 }
 
 template <class T>
@@ -367,14 +361,23 @@ template <class T>
              }
          } while (m2 != 9);
      }
-     template <class C>
-     int main_program_complex() {
+     
+ template <class C>
+ void main_program_2(int num_tops) {
+     main_program_complex<C>(num_tops);
+ }
+
+         
+       
+        
      
      
      
-     }
+
+
        int main()
        {
+           
            int num_tops;
            cout << "Hello! Enter the number of tops of the polygon" << endl;
            cin >> num_tops;
@@ -416,16 +419,16 @@ template <class T>
                    cout << "tupe - double" << endl;
                    main_program <double>(num_tops);
                    break;
-                   //case 52:
-                    //   cout << "tupe - complex (float)" << endl;
-                      // main_program <complex<float>>();
-                       //break;
-                  // case 53:
-                    //   cout << "tupe - complex (double)" << endl;
-                      // main_program <complex<double>>();
-                       //break;
-                   //}
+                   case 52:
+                       cout << "tupe - complex<double>" << endl;
+                       main_program_2<double>(num_tops);
+                       break;
+                   case 53:
+                       cout << "tupe - complex<float>" << endl;
+                       main_program_2<float>(num_tops);
+                       break;
+               }
 
                }
            }
-       }
+       

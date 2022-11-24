@@ -189,6 +189,7 @@
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Point.cpp" />
+    <ClCompile Include="Menu_Compl.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Broken_compl.h" />

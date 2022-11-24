@@ -6,7 +6,7 @@ Complex<C>::Complex(C re, C im): re(re), im(im)
 {}
 
 template<class C>
-Complex<C>& Complex<C>::operator*(const Complex& other)const {
+Complex<C>& Complex<C>::operator*(Complex& other) {
     Complex tmp(*this);
     re = tmp.re * other.re - tmp.im * other.im;
     im = tmp.re * other.im + tmp.im * other.re;
@@ -14,7 +14,7 @@ Complex<C>& Complex<C>::operator*(const Complex& other)const {
 }
 
 template<class C>
-Complex<C>& Complex<C>::operator*=(const C& other)const {
+Complex<C>& Complex<C>::operator*=(C& other) {
     Complex tmp(*this);
     re = tmp.re * other;
     re = tmp.im * other;
@@ -34,7 +34,7 @@ istream& operator>>(istream& in, Complex<C>& x)
 }
 
 template<class C>
-Complex<C>::operator double() const
+double Complex<C>::return_double() const
 {
     return sqrt(re * re - im * im);
 }
@@ -42,11 +42,8 @@ Complex<C>::operator double() const
 template<class C>
 Complex<C>& Complex<C>::operator=(const Complex<C>& other)
 {
-    if (*this != other)
-    {
-        re = other.re;
-        im = other.im;
-    }
+    re = other.re;
+    im = other.im;
     return *this;
 }
 
@@ -61,10 +58,25 @@ C Complex<C>::Get_Im()const {
 }
 
 template<class C>
+void Complex<C>::SetRe(C Re)
+{
+    this->re = Re;
+}
+
+template<class C>
+void Complex<C>::SetIm(C Im)
+{
+    this->im = Im;
+}
+
+template<class C>
 double Complex<C>::GetDistance(const Complex& A, const Complex& B)
 {
     Complex<C> tmp;
     tmp.re = A.re - B.re;
     tmp.im = A.im - B.im;
-    return tmp.operator double;
+    return tmp.return_double();
 }
+
+template class Complex <float>;
+template class Complex<double>;
