@@ -1,9 +1,7 @@
-
 #include "Broken_line.h"
 #include "Point.h"
-#include "complex"
 #include "ESetErrors.h"
-
+#include <complex>
 
 
 
@@ -93,8 +91,8 @@ template <class T>
 double Broken_line<T>::get_length() const{
     double length=0;
     if(size>1) {
-        for (int i = 0; i < size; i++) {
-            if (i == size - 1) { length += Point<T>::GetDistance(points[i], points[0]); }
+        for (int i = 0; i < counter; i++) {
+            if (i == counter - 1) { length += Point<T>::GetDistance(points[i], points[0]); }
             else { length += Point<T>::GetDistance(points[i], points[i + 1]); }
         }
     }
@@ -114,14 +112,12 @@ double Broken_line<T>::get_length_two_tops(const Point<T> &A, const Point<T> &B)
 template class Point<int>;
 template class Point<float>;
 template class Point<double>;
-template class Point<complex<double>>;
-template class Point<complex<float>>;
+
 
 template class Broken_line<int>;
 template class Broken_line<float>;
 template class Broken_line<double>;
-//template class Broken_line<complex<double>>;
-//template class Broken_line<complex<float>>;
+
 
 
 

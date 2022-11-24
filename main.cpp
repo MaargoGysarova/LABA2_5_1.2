@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Broken_line.h"
+#include "Complex.h"
 using namespace std;
 #include <conio.h>
 #include "Graphics.h"
@@ -229,7 +230,7 @@ bool check_regular_polygon(Broken_line<T>& line) {
 	
     int index = 0;
     //create massive of nulls
-    
+    //привет
     int index_massive = -1;
     //check if all sides are equal
     for (int i = 0; i < line.get_counter()-2; i++) {
@@ -243,23 +244,16 @@ bool check_regular_polygon(Broken_line<T>& line) {
     // check if massive is empty
     if (index_massive == -1) {
         return true;
-    }
-    return false;
+    } 
+        
+        
+        return false;
     }
 
  
 template <class T>
-       int main_program() {
+       int main_program(int num_tops) {
 		
-         
-         int num_tops;
-         cout << "Hello! Enter the number of tops of the polygon" << endl;
-         cin >> num_tops;
-         while (num_tops <= 0) {
-             cout << "Incorrect value" << endl;
-             cout << "Num of top = ";
-             cin >> num_tops;
-         }
          Broken_line<T> line(5, num_tops+1);
          Point<T> tmp(0,0);
          bool reg = false;
@@ -373,9 +367,22 @@ template <class T>
              }
          } while (m2 != 9);
      }
+     template <class C>
+     int main_program_complex() {
      
+     
+     
+     }
        int main()
        {
+           int num_tops;
+           cout << "Hello! Enter the number of tops of the polygon" << endl;
+           cin >> num_tops;
+           while (num_tops <= 0) {
+               cout << "Incorrect value" << endl;
+               cout << "Num of top = ";
+               cin >> num_tops;
+           }
            while (true)
            {
                system("cls");
@@ -398,16 +405,16 @@ template <class T>
                switch (choise)
                {
                case 49:
-                   cout << "tupe- int" << endl;
-                   main_program <int>();
+                   cout << "tupe - int" << endl;
+                   main_program <int>(num_tops);
                    break;
                case 50:
-                   cout << "tupe- float" << endl;
-                   main_program <float>();
+                   cout << "tupe - float" << endl;
+                   main_program <float>(num_tops);
                    break;
                case 51:
-                   cout << "tupe- double" << endl;
-                   main_program <double>();
+                   cout << "tupe - double" << endl;
+                   main_program <double>(num_tops);
                    break;
                    //case 52:
                     //   cout << "tupe - complex (float)" << endl;

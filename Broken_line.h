@@ -2,7 +2,8 @@
 #ifndef LLABA2_5_1_BROKEN_LINE_H
 #define LLABA2_5_1_BROKEN_LINE_H
 #include "Point.h"
-#include <complex>
+
+
 
 template <class T>
 class Broken_line{
@@ -28,17 +29,6 @@ public:
      double get_length()const;
      static double get_length_two_tops(const Point<T>& A,const Point<T>& B);
      int get_counter() const;
-
-     
-
-
-
-
-
-
-
-
-
 };
 
 

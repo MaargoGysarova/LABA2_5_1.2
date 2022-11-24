@@ -34,7 +34,6 @@ double Point<T>::GetDistance(const Point &A,const Point &B){ return sqrt(pow((A.
 template class Point<int>;
 template class Point<float>;
 template class Point<double>;
-//template class Point<complex<double>>;
-//template class Point<complex<float>>;
+
 
 
