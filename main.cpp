@@ -369,13 +369,7 @@ template <class T>
 
          
        
-        
-     
-     
-     
-
-
-       int main()
+   int main()
        {
            
            int num_tops;
@@ -393,8 +387,8 @@ template <class T>
                cout << "Press 1 for int" << endl;
                cout << "Press 2 for float" << endl;
                cout << "Press 3 for double" << endl;
-               cout << "Press 4 for complex (float)" << endl;
-               cout << "Press 5 for complex (double)" << endl;
+               cout << "Press 4 for complex (double)" << endl;
+               cout << "Press 5 for complex (float)" << endl;
                cout << "Press Esc to finish the program" << endl;
                int choise;
                while (true)

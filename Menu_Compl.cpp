@@ -54,12 +54,12 @@ Broken_compl<C> create_new_line_compl() {
     }
     Broken_compl<C> new_line(5, num_of_top);
     Complex<C> tmp(0, 0);
-    int x = 0, y = 0;
+    C x = 0, y = 0;
     for (int i = 0; i < num_of_top; i++) {
         cout << "Enter the tup[" << i + 1 << "]values" << endl;
-        cout << "x[" << i + 1 << "]= " << endl;
+        cout << "Re[" << i + 1 << "]= " << endl;
         x = check_compl<C>();
-        cout << "y[" << i + 1 << "]= " << endl;
+        cout << "Im[" << i + 1 << "]= " << endl;
         y = check_compl<C>();
         tmp.SetRe(x); tmp.SetIm(y);
         new_line += tmp;
@@ -77,9 +77,9 @@ void set_top_compl(Broken_compl<C>& line, int index) {
     Complex<C> new_point(0, 0);
     C x = 0, y = 0;
     cout << "Enter the tup[" << index + 1 << "]values" << endl;
-    cout << "x[" << index << "]= " << endl;
+    cout << "Re[" << index << "]= " << endl;
     x = check_compl<C>();
-    cout << "y[" << index << "]= " << endl;
+    cout << "Im[" << index << "]= " << endl;
     y = check_compl<C>();
     new_point.SetRe(x); new_point.SetIm(y);
     line(new_point, index - 1);
@@ -101,9 +101,9 @@ void add_to_end_compl(Broken_compl<C>& line) {
     C x = 0, y = 0;
     cout << "Creating top" << endl;
     cout << "Enter the tup[i+1] values" << endl;
-    cout << "x = " << endl;
+    cout << "Re = " << endl;
     x = check_compl<C>();
-    cout << "y = " << endl;
+    cout << "Im = " << endl;
     y = check_compl<C>();
     Complex<C> new_point(x, y);
     line += new_point;
@@ -115,9 +115,9 @@ void add_to_start_compl(Broken_compl<C>& line) {
     C x = 0, y = 0;
     cout << "Creating top" << endl;
     cout << "Enter the tup[i+1] values" << endl;
-    cout << "x = " << endl;
+    cout << "Re = " << endl;
     x = check_compl<C>();
-    cout << "y = " << endl;
+    cout << "Im = " << endl;
     y = check_compl<C>();
     Complex<C> new_point(x, y);
     line + new_point;
@@ -135,7 +135,7 @@ void show_all_tops_compl(Broken_compl<C>& line) {
     Complex<C> tmp(0, 0);
     for (int i = 0; i < line.get_counter(); i++) {
         tmp = line[i];
-        cout << "[" << i << "]:";
+        cout << "[" << i+1 << "]:";
         cout << "(" << tmp.Get_Re() << "+i" << tmp.Get_Im() << ")" << endl;
     }
 }
@@ -164,9 +164,9 @@ int main_program_complex(int num_tops) {
     C x = 0, y = 0;
     for (int i = 0; i < num_tops; i++) {
         cout << "Enter the tup[" << i + 1 << "]values" << endl;
-        cout << "x[" << i + 1 << "]= ";
+        cout << "Re[" << i + 1 << "]= ";
         x = check_compl<C>();
-        cout << "y[" << i + 1 << "]= ";
+        cout << "Im[" << i + 1 << "]= ";
         y = check_compl<C>();
         tmp.SetRe(x);
         tmp.SetIm(y);
@@ -176,7 +176,7 @@ int main_program_complex(int num_tops) {
     do {
         system("cls");
         //m2 = menu2();
-        m2 = 53;
+        m2 = 54;
 
         switch (m2) {
         case 49:
